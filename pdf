@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+
+sigma = 1
+mu = 0
+N = 10000
+
+
+normal_values = np.random.normal(size=N)
+print (np.min(normal_values),np.max(normal_values))
+dummy,bins,dummy = plt.hist(normal_values,int(np.sqrt(N)), 
+                            normed = True,lw=1)
+###hist()是绘制直方图
+
+###此处的三个变量有点不太明白怎么回事
+
+plt.plot(bins,1/(sigma*np.sqrt(2*np.pi))*np.exp(-(bins-mu)**2/(2*sigma**2)),lw=2)
+plt.show()
